@@ -2,11 +2,7 @@
 
 This diagram illustrates the components and their interactions within an AWS CodePipeline setup.
 
-![AWS CodePipeline Infrastructure](../images/aws_codepipeline_infrastructure.png)
-
-This diagram is used in the project ["name"](https://github.com/DimitryZH/cloudformation-codepipeline).
-
-## Components
+## Components Overview
 
 - **VPC (Virtual Private Cloud)**: Contains the EC2 instance.
 
@@ -28,7 +24,7 @@ This diagram is used in the project ["name"](https://github.com/DimitryZH/cloudf
 - **IAM (Identity and Access Management)**: Manages roles and permissions.
   - **IAM Roles**: Roles assigned to the pipeline and EC2 instance.
 
-## Diagram
+## Key Features
 
 The diagram visually represents the following flow:
 
@@ -38,3 +34,5 @@ The diagram visually represents the following flow:
 4. **IAM Roles** provide necessary permissions to the **Pipeline** and **EC2 Instance**.
 
 This setup ensures a streamlined CI/CD process within AWS, leveraging various AWS services to automate code deployment and testing.
+
+This diagram is used in the project [AWS CodePipeline Infrastructure as Code (IaC)](https://github.com/DimitryZH/cloudformation-codepipeline).
