@@ -2,34 +2,64 @@
 
 ## Project Overview
 
-This project aims to utilize the "Diagrams as Code" approach for creating and maintaining system architecture diagrams. By treating diagrams like code, we can apply software engineering best practices such as version control, code review, and automated testing to the process of creating and updating diagrams. This repository contains the source code for generating diagrams, the generated diagrams themselves, and additional documentation.
+This project aims to utilize the "Diagrams as Code" approach for creating and maintaining system architecture and workflow diagrams. By treating diagrams like code, we can apply software engineering best practices such as version control, code review, and automated testing to the process of creating and updating diagrams. This repository contains the source code for generating diagrams, the generated diagrams themselves, and additional documentation.
 
 ## Technologies
 
 [![Python Badge](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](#)
 
-## How to Generate Diagrams
+---
 
-To generate diagrams from the source code, follow these steps:
+## Architecture & Workflow Diagrams
 
-1. Ensure you have Python installed on your system.
-2. Install the `diagrams` library using pip:
+Below is a summary of the diagrams available in this project:
 
-   ```shell
-   pip install diagrams
-   ```
+| Diagram Name                       | Source Script (.py)                                         | Documentation (.md)                                         | Diagram (.png)                                         |
+|-------------------------------------|------------------------------------------------------------|-------------------------------------------------------------|--------------------------------------------------------|
+| EKS Production Cluster              | [src/eks_production_cluster.py](src/eks_production_cluster.py)           | [docs/eks_production_cluster_architecture.md](docs/eks_production_cluster_architecture.md) | [docs/eks_production_cluster_architecture.png](docs/eks_production_cluster_architecture.png) |
+| AWS CodePipeline Infrastructure     | [src/aws_codepipeline_infrastructure.py](src/aws_codepipeline_infrastructure.py) | [docs/aws_codepipeline_infrastructure.md](docs/aws_codepipeline_infrastructure.md)         | [docs/aws_codepipeline_infrastructure.png](docs/aws_codepipeline_infrastructure.png)         |
+| Argo CD Root App Manager            | [src/argo_cd_root_app.py](src/argo_cd_root_app.py)                         | [docs/argo_cd_root_app.md](docs/argo_cd_root_app.md)                                 | [docs/argo_cd_root_app.png](docs/argo_cd_root_app.png)                                 |
+| GitHub Actions AWS CI/CD Pipeline   | [src/github_actions_aws_ci_cd.py](src/github_actions_aws_ci_cd.py)         | [docs/github_actions_aws_ci_cd.md](docs/github_actions_aws_ci_cd.md)                 | [docs/github_actions_aws_ci_cd.png](docs/github_actions_aws_ci_cd.png)                 |
 
-For detailed guidance, refer to the [official documentation](https://diagrams.mingrammer.com/docs/getting-started/installation).
+> For more details and links to the projects where the diagrams are used, refer to the `/docs` directory.
 
-3. Navigate to the `/src` directory where the Python scripts for diagram generation are located.
-4. Run the desired script to generate a diagram. For example:
-
-   ```shell
-   python eks_cluster.py
-   ```
-
-5. The generated diagrams will be saved as .png image files.
+---
 
 ## Diagram Descriptions
 
-Each diagram in this project serves a specific purpose and provides insight into the architecture of different systems. For more details and links to the projects where the diagrams are used, refer to the `/docs` directory.
+Each diagram in this project serves a specific purpose and provides insight into the architecture or workflow of different systems. For more details and links to the projects where the diagrams are used, refer to the `/docs` directory.
+
+
+## How to Generate Diagrams
+
+This project supports two types of diagrams: architecture diagrams (using the `diagrams` library) and workflow diagrams (using the `graphviz` library with YAML parsing).
+
+### Architecture Diagrams
+
+1. Ensure you have Python installed.
+2. Install the `diagrams` library:
+   ```shell
+   pip install diagrams
+   ```
+3. Navigate to the `/src` directory.
+4. Run the desired architecture diagram script, for example:
+   ```shell
+   python eks_production_cluster.py
+   ```
+5. The generated diagram will be saved as a `.png` file in the appropriate location.
+
+### Workflow Diagrams
+
+1. Ensure you have Python installed.
+2. Install the required libraries:
+   ```shell
+   pip install graphviz pyyaml
+   ```
+3. Navigate to the `/src` directory.
+4. Run the workflow diagram script, for example:
+   ```shell
+   python github_actions_aws_ci_cd.py
+   ```
+5. The generated workflow diagram will be saved as a `.png` file in the appropriate location.
+
+
